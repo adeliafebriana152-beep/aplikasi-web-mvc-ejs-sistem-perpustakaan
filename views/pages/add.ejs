@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+  <div class="container">
+    <h1>Form Tambah Buku Baru</h1>
+    <form action="/catalog/add" method="POST">
+      <div>
+        <!-- Field 1: Teks -->
+        <label for="title">Judul Buku:</label><br>
+        <input type="text" id="title" name="title" required>
+      </div>
+      <br>
+      <div>
+        <!-- Field 2: Dropdown -->
+        <label for="category">Kategori:</label><br>
+        <select id="category" name="category" required>
+          <option value="">-- Pilih Kategori --</option>
+          <option value="Teknologi">Teknologi</option>
+          <option value="Ilmu Komputer">Ilmu Komputer</option>
+          <option value="Desain">Desain</option>
+          <option value="Umum">Umum</option>
+        </select>
+      </div>
+      <br>
+      <div>
+        <!-- Field 3: Angka -->
+        <label for="stock">Jumlah Stok:</label><br>
+        <input type="number" id="stock" name="stock" min="1" required>
+      </div>
+      <br>
+      <button type="submit">Simpan Data</button>
+    </form>
+  </div>
+</body>
+</html>
